@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background: rgb(8, 121, 121);
+      }
+
+      main {
+        max-width: 750px;
+        margin: 4em auto 1em auto;
+        background: #fff;
+        border-radius: 10px;
+        padding: 2em;
+        text-align: center;
+      }
+
+      main img {
+        height: 6rem;
+        width: 6rem;
+        object-fit: cover;
+        border-radius: 100%;
+        margin-top: -5rem;
+        box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.5);
+      }
+
+      h1 {
+        margin: 0.5em 0;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <img src="" alt="Loading" />
+      <h1>Loading Loading</h1>
+      <div class="email">Loading..</div>
+    </main>
+
+    <script>
+      const image = document.querySelector("img");
+      image.src =
+        "https://s1.15min.lt/images/photos/2016/05/12/original/verslininkas-petras-slekys-57346378a2f83.jpg";
+
+      const h1 = document.querySelector("h1");
+      h1.textContent = "Petras Slekys";
+
+      const email = document.querySelector(".email");
+      email.textContent = "info@info.com";
+    </script>
+  </body>
+</html>
