@@ -1,3 +1,5 @@
+// Create Table
+
 const table = document.createElement("table");
 table.classList.add("container");
 
@@ -11,6 +13,8 @@ th2.textContent = "Surname";
 
 row.append(th1, th2);
 document.body.append(table);
+
+// Listen for submit
 
 document.forms.splitter.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -29,8 +33,11 @@ document.forms.splitter.addEventListener("submit", (event) => {
     };
 
     displayItem(person);
+    event.target.elements.fullname.value = "";
   }
 });
+
+// Function to add to table
 
 function displayItem(individual) {
   const tr = table.insertRow();
