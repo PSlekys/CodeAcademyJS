@@ -1,5 +1,15 @@
 const table = document.createElement("table");
 table.classList.add("container");
+
+const row = table.insertRow();
+
+const th1 = document.createElement("th");
+th1.textContent = "Name";
+
+const th2 = document.createElement("th");
+th2.textContent = "Surname";
+
+row.append(th1, th2);
 document.body.append(table);
 
 document.forms.splitter.addEventListener("submit", (event) => {
