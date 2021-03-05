@@ -11,12 +11,71 @@
     />
   </head>
   <body>
-    <section class="hero is-primary">
+    <header class="hero is-primary">
       <div class="hero-body">
         <div class="container">
           <p class="title">Library</p>
           <p class="subtitle">Add a book or find a book!</p>
         </div>
+      </div>
+    </header>
+
+    <section class="section">
+      <div class="container">
+        <form name="addbook">
+          <div class="field">
+            <label class="label" for="image">Image URL:</label>
+            <div class="control">
+              <input
+                class="input"
+                type="url"
+                id="image"
+                name="image"
+                placeholder="https://example.com/image.png"
+                required
+              />
+            </div>
+          </div>
+          <div class="field">
+            <label class="label" for="price">Price, Eur:</label>
+            <div class="control">
+              <input
+                class="input"
+                type="number"
+                id="price"
+                name="price"
+                placeholder="10000"
+                required
+              />
+            </div>
+          </div>
+          <div class="field">
+            <label class="label" for="description">Description:</label>
+            <div class="control">
+              <textarea
+                class="textarea"
+                name="description"
+                id="description"
+                placeholder="Something about the flat..."
+              ></textarea>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label" for="city">City:</label>
+            <div class="select">
+              <select name="city" id="city">
+                <option value="vilnius">Vilnius</option>
+                <option value="kaunas">Kaunas</option>
+                <option value="klaipeda">Klaipėda</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <button class="button is-primary" type="submit">Add</button>
+            </div>
+          </div>
+        </form>
       </div>
     </section>
   </body>
