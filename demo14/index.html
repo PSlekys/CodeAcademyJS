@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Add a book</h1>
+      <form name="addbook">
+        <input
+          type="text"
+          name="author"
+          id="author"
+          placeholder="Author"
+          required
+        />
+        <input
+          type="text"
+          name="title"
+          id="title"
+          placeholder="Title"
+          required
+        />
+        <input
+          type="number"
+          name="year"
+          id="year"
+          placeholder="Year"
+          step="1"
+          required
+        />
+        <input
+          type="number"
+          name="price"
+          id="price"
+          placeholder="Price"
+          step="0.01"
+          required
+        />
+        <button type="submit">Add</button>
+      </form>
+    </div>
+
+    <script>
+      const table = document.createElement("table");
+      const tr = table.insertRow();
+      const th1 = document.createElement("th");
+      th1.textContent = "Author";
+      const th2 = document.createElement("th");
+      th2.textContent = "Title";
+      const th3 = document.createElement("th");
+      th3.textContent = "Year";
+      const th4 = document.createElement("th");
+      th4.textContent = "Price";
+      tr.append(th1, th2, th3, th4);
+      document.querySelector(".container").append(table);
+
+      document.forms.addbook.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const author = event.target.elements.author.value.trim().split(" ");
+        const title = event.target.elements.title.value.trim();
+        const year = Number(event.target.elements.year.value);
+        const price = Number(event.target.elements.price.value);
+
+        const authorArray = author
+          .map((item, index) =>
+            author.length - 1 === index ? item : item[0].toUpperCase()
+          )
+          .join(". ");
+
+        console.log(authorArray);
+
+        const person = {
+          author,
+          title,
+          year,
+          price,
+        };
+
+        inputTable(person);
+      });
+
+      function inputTable(item) {
+        const tr = table.insertRow();
+
+        const td1 = tr.insertCell();
+        td1.textContent = item.author;
+
+        const td2 = tr.insertCell();
+        td2.textContent = item.title;
+
+        const td3 = tr.insertCell();
+        td3.textContent = item.year;
+
+        const td4 = tr.insertCell();
+        td4.textContent = item.price.toFixed(2);
+      }
+    </script>
+  </body>
+</html>
