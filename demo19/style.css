@@ -1,0 +1,33 @@
+header {
+  background: rgb(168, 99, 99);
+}
+
+.container {
+  width: 75%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 4rem 2rem;
+}
+
+input,
+select {
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 1em;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid black;
+  padding: 5px;
+}
+
+a {
+  display: inline-block;
+  margin-bottom: 2rem;
+}
